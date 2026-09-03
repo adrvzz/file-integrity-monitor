@@ -59,7 +59,7 @@ The core logic (`hasher.py`, `baseline.py`, `scanner.py`) doesn't know anything 
 ## Installation
 
 ```bash
-git clone https://github.com/<your-username>/file-integrity-monitor.git
+git clone https://github.com/adrvzz/file-integrity-monitor.git
 cd file-integrity-monitor
 
 # Optional, only needed for `watch` mode:
