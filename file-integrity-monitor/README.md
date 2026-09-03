@@ -173,7 +173,7 @@ pytest tests/ -v
 
 Building this taught me the difference between hashing for *integrity* (SHA-256 here) versus encryption for *confidentiality* — they solve different problems and it's easy to conflate them early on. It also made the trade-off between polling and real-time monitoring concrete: on-demand scanning is simple and stateless but can miss the exact moment something happened, while `watchdog`'s real-time events are immediate but need a long-running process and produce noisier output. Writing the tests also caught an edge case I hadn't thought through up front — what happens when a file becomes unreadable *during* a scan — which is now handled explicitly instead of crashing.
 
-*(This section is worth writing in your own words before this goes on your GitHub — it's the part an interviewer is most likely to ask you to expand on.)*
+
 
 ## Project Structure
 
@@ -204,8 +204,8 @@ file-integrity-monitor/
 
 ## Author
 
-**[Your Name]**
-[your.email@example.com] · [GitHub](https://github.com/<your-username>) · [LinkedIn](https://linkedin.com/in/<your-profile>)
+**Andrei Raviza**
+[andrei.raviza22@gmail.com] · [GitHub](https://github.com/adrvzz) · [LinkedIn](https://linkedin.com/in/andrei-raviza-04a1a7347)
 
 ## License
 
