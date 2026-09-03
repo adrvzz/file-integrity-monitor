@@ -1,0 +1,5 @@
+# Core dependencies: none. The `baseline` and `scan` commands use only
+# the Python standard library (hashlib, argparse, logging, pathlib).
+
+# Optional — only needed for the real-time `watch` command:
+watchdog>=3.0.0

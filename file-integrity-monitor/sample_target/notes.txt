@@ -1,0 +1,11 @@
+This is a sample directory for trying out the File Integrity Monitor.
+
+Quick demo:
+  1. From the project root, run:
+       python run_fim.py baseline ./sample_target
+  2. Change something in this folder — edit this file, add a new
+     file, or delete app_config.txt.
+  3. Run:
+       python run_fim.py scan ./sample_target
+  4. You should see the change(s) you made reported as added,
+     modified, or deleted.

@@ -1,0 +1,37 @@
+$ python run_fim.py baseline ./sample_target
+2026-09-02T22:02:26+0000 | INFO     | BASELINE_CREATED | target=/home/user/file-integrity-monitor/sample_target | files=2 | algorithm=sha256 | baseline_file=baseline.json
+Baseline created: 2 file(s) tracked.
+Saved to: baseline.json
+
+$ python run_fim.py scan ./sample_target
+
+File Integrity Scan Report — 2026-09-02T22:02:26.288610+00:00
+Target: /home/user/file-integrity-monitor/sample_target
+Unchanged: 2
+Added:     0
+Modified:  0
+Deleted:   0
+
+2026-09-02T22:02:26+0000 | INFO     | SCAN_CLEAN | no changes detected
+No changes detected. All monitored files match the baseline.
+
+# ...now simulate an incident: edit a file, drop a new one, remove another
+
+$ python run_fim.py scan ./sample_target
+
+File Integrity Scan Report — 2026-09-02T22:02:26.333001+00:00
+Target: /home/user/file-integrity-monitor/sample_target
+Unchanged: 0
+Added:     1
+Modified:  1
+Deleted:   1
+
+  [+] .hidden_backdoor.txt
+2026-09-02T22:02:26+0000 | WARNING  | FILE_ADDED | .hidden_backdoor.txt
+  [~] app_config.txt
+2026-09-02T22:02:26+0000 | WARNING  | FILE_MODIFIED | app_config.txt
+  [-] notes.txt
+2026-09-02T22:02:26+0000 | WARNING  | FILE_DELETED | notes.txt
+2026-09-02T22:02:26+0000 | WARNING  | SCAN_ALERT | total_changes=3
+
+3 change(s) detected. See log for details: logs/fim_events.log

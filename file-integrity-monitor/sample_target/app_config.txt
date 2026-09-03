@@ -1,0 +1,5 @@
+app_name=DemoApp
+version=1.0.0
+debug=False
+api_endpoint=https://api.example.local/v1
+max_connections=50
